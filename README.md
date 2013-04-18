@@ -1,43 +1,19 @@
 Math480-hw2
 ===========
 
-This is my implementation for the Euclidean division algorithm
+This is my implementation for the Euclidean division algorithm, it makes the appropriate checks and exceptions. 
+It also deals with negative values and if one value passed is larger than the other. This is strictly for integers.
+Here are some examples:
 
 
+gcd1(33,-777) = 3
 
-def gcd1(a,b):
-    try:
-        a/b
-    except ZeroDivisionError, err:
-        print err
-        
-    a = abs(a)
-    b = abs(b)
-    if a%b == 0:
-        return b
-    if a == 0:
-        return b  
-        
-    count = 0
-    if a > b:
-        while a != b:
-            c = 0
-            while a - b > c:
-                count += 1
-                c = count * b
-            r = a - c
-            a = b
-            b = r
-            count = 0
-        return b 
-    else:
-        while a != b:
-            c = 0
-            while b - a > c:
-                count += 1
-                c = count * a
-            r = b - c
-            b = a
-            a = r
-            count = 0
-        return a
+gcd1(777, 33) = 3 
+
+gcd1(4023, 17) = 1
+
+gcd1(45, 3) = 3
+
+gcd1(1234568, 6788) = 4
+
+gcd1(1234321, 6787) = 11
